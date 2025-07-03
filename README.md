@@ -3,19 +3,18 @@
 PASSI PER L'INSTALLAZIONE E L'ESECUZIONE DEL PROGETTO:
 
 FASE 1- INSTALLAZIONE:
-1) Scaricare tutti i file (.zip e docker-compose)
+1) Scaricare tutti i file (.zip, docker-compose e il databse Sakila)
 2) Scaricare Mysql da questo link: https://www.mysql.com/products/workbench/
-3) Scaricare il batabase (sakila database) da questo link: https://dev.mysql.com/doc/index-other.html
-4) Scaricare MongoDB Compass e fare l'accesso https://www.mongodb.com/try/download/compass
-5) Scaricare Docker Desktop https://www.docker.com/products/docker-desktop/
-6) Installare l'immagine MinIO su Docker > docker run -d -p 9000:9000 -p 9090:9090 --name minio -v C:\minio\data:/data \ -e "MINIO_ROOT_USER=[user]" -e "MINIO_ROOT_PASSWORD=[password]" \ quay.io/minio/minio server /data --console-address ":9090"
-7) Installare l'immagine Redis > docker run --name redis -p 6379:6379 -d redis
-8) Installare tramite l'uso di docker-compose kafka e zookeeper
-9) Aprire la cartella scaricata e aprire il file config.py
+3) Scaricare MongoDB Compass e fare l'accesso https://www.mongodb.com/try/download/compass
+4) Scaricare Docker Desktop https://www.docker.com/products/docker-desktop/
+5) Installare l'immagine MinIO su Docker > docker run -d -p 9000:9000 -p 9090:9090 --name minio -v C:\minio\data:/data \ -e "MINIO_ROOT_USER=[user]" -e "MINIO_ROOT_PASSWORD=[password]" \ quay.io/minio/minio server /data --console-address ":9090"
+6) Installare l'immagine Redis > docker run --name redis -p 6379:6379 -d redis
+7) Installare tramite l'uso di docker-compose kafka e zookeeper
+8) Aprire la cartella scaricata e aprire il file config.py
     -Modifica 'access_key' e 'secret_key' con i dati che avete inserito nel punto 6 durante l'installazione di MinIO, modificare user e password per quanto riguarda       l'accesso di MySQL e la configurazione del localhost di MongoDB
-10)Caricare il database Sakila su MySQL
-11) Scarica il backup con l'uso di CMD (mysqldump -u user -p Sakila > nome_backup.sql)
-12) Caricarlo nel nuovo database (si consiglia di nominarlo Sakila2) sempre tramite l'uso di CMD (mysql -u user -p Sakila2 [o un altro nome] < nome_backup.sql
+9)Caricare il database Sakila su MySQL
+10) Scarica il backup con l'uso di CMD (mysqldump -u user -p Sakila > nome_backup.sql)
+11) Caricarlo nel nuovo database (si consiglia di nominarlo Sakila2) sempre tramite l'uso di CMD (mysql -u user -p Sakila2 [o un altro nome] < nome_backup.sql
 
 FASE 2- AVVIO:
 1) Avviare i container Redis, Zookeeper, Kafka e MinIO su Docker
